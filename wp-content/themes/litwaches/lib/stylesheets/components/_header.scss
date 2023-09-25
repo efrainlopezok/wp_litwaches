@@ -1,0 +1,242 @@
+/*
+Site Header
+---------------------------------------------------------------------------------------------------- */
+
+.site-header {
+    background-color: $color-bg-header;
+    min-height: 100px;
+    transition: all .3s ease-in-out;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    @include breakpoint('small') {
+        padding: 0;
+    }
+    .wrap {
+        padding: 10px 0;
+        @include breakpoint('medium') {
+            padding: 20px 5%;
+        }
+    }
+    .title-area {
+        @include breakpoint('medium') {
+            text-align: center;
+        }
+    }
+}
+
+
+/* Title Area
+--------------------------------------------- */
+
+.title-area {
+    float: left;
+    padding: 0px 0;
+    width: 360px;
+    @include breakpoint('large') {
+        width: 300px;
+    }
+    @include breakpoint('medium') {
+        width: 100%;
+    }
+}
+
+.header-full-width .title-area {
+    width: 100%;
+}
+
+.site-title {
+    font-size: $font-size-site-title;
+    font-weight: 400;
+    line-height: 1.2;
+    @include breakpoint('medium') {
+        text-align: center;
+    }
+}
+
+.site-title a,
+.site-title a:hover {
+    color: $color-link-site-title;
+}
+
+.header-image .site-title>a {
+    background: url(images/logo.png) no-repeat left;
+    float: left;
+    min-height: 60px;
+    width: 100%;
+}
+
+.header-image .title-area {
+    @include breakpoint('medium') {
+        background-position: center top;
+    }
+}
+
+.site-description {
+    font-size: $font-size-h6;
+    font-weight: 300;
+    line-height: 1.5;
+    @include breakpoint('medium') {
+        text-align: center;
+    }
+}
+
+.site-description,
+.site-title {
+    margin-bottom: 0;
+}
+
+.header-image .site-description,
+.header-image .site-title {
+    display: block;
+    text-indent: -9999px;
+}
+
+
+/* Widget Area
+--------------------------------------------- */
+
+.site-header .widget-area {
+    text-align: center;
+    @include breakpoint('large') {
+        width: 620px;
+    }
+    @include breakpoint('medium') {
+        width: 100%;
+    }
+}
+
+.hamburger-right {
+    display: none;
+    position: absolute;
+    top: 30px;
+    width: 40px;
+    height: 40px;
+    padding: 5px 5px;
+    cursor: pointer;
+    right: 10px;
+    z-index: 99999999;
+
+    span {
+        background-color: #000;
+        width: 100%;
+        height: 2px;
+        display: block;
+        margin: 0 0 8px auto;
+        transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+        &:nth-child(2) {
+            width: 50%;
+        }
+
+        &:nth-child(3) {
+            visibility: hidden;
+        }
+    }
+
+    &[aria-expanded="true"] {
+        position: fixed;
+        top: 40px;
+        right: 15px;
+        span {
+            background-color: #fff;
+        }
+        span:first-child {
+            transform: scale(1) rotateZ(45deg) translate3d(5px, 5px, 0);
+            position: relative;
+            top: -4px;
+        }
+        span:nth-child(2) {
+            transform: scale(1) rotateZ(-45deg) translate3d(6px, -5px, 0);
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .site-header {
+        min-height: 75px;
+
+        .row {
+            margin-left: 0;
+            margin-right: 0;
+
+            >div[class*="col-"] {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .top-menu-logo {
+                flex: 0 0 70px;
+                max-width: 70px;
+            }
+        }
+
+        .wrap {
+            position: relative;
+        }
+
+        .title-area {
+            padding: 0;
+        }
+        .logo {
+            display: inline-block;
+        }
+        .logo img {
+            height: 42px;
+        }
+    }
+    .top-menu-center,
+    .top-menu-socials {
+        display: none;
+    }
+
+    .hamburger-right {
+        display: block;
+    }
+
+    .top-menu-center {
+        top: 0;
+        right: 0 !important;
+        bottom: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.48);
+        width: 0%;
+        height: 100%;
+        z-index: 99999999;
+        position: fixed;
+        transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+        display: block;
+        z-index: 300;
+        flex: none;
+        max-width: unset;
+
+        &[aria-expanded="true"] {
+            width: 100%;
+        }
+
+        ul.genesis-nav-menu {
+            background: #06040e;
+            height: 100vh;
+            width: 400px;
+            max-width: calc(100% - 20px);
+            margin: 0;
+            margin-left: auto;
+            padding: 100px 0 0;
+
+            li {
+                display: block;
+            }
+
+            a {
+                color: #fff;
+                padding: 15px 20px;
+                text-align: right;
+            }
+        }
+
+        .widget-area {
+            width: 100%;
+        }
+    }
+}

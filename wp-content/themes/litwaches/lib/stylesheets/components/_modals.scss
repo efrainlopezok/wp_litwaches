@@ -1,0 +1,82 @@
+/*** Modals ***/
+
+.c-modal {
+    background-color: rgba(0,0,0,0.3);
+    display: block;
+    pointer-events: none;
+    opacity: 0;
+    display: none;
+}
+.c-modal .modal-dialog {
+    top: 40%;
+    transform: translateY(-50%) !important;
+}
+.c-modal .modal-content {
+    border: 0 none;
+    border-radius: 0;
+    max-height: calc(100vh - 60px);
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.c-modal .modal-body {
+    padding: 32px;
+}
+.c-modal.show {
+    display: block;
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Custom modal for playing videos using video.js */
+
+.c-modal.video-modal .modal-dialog {
+    background-color: #000;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1160px;
+    max-width: calc(100% - 20px);
+    top: 46%;
+}
+.c-modal.video-modal .modal-content {
+    max-height: 100%;
+    overflow: visible;
+    overflow-x: visible;
+    overflow-y: visible;
+}
+.c-modal.video-modal .close {
+    background-color: transparent;
+    border: 0 none;
+    font-size: 20px;
+    position: absolute;
+    right: -25px;
+    top: -51px;
+    outline: 0 !important;
+    font-size: 26px;
+    color: #000;
+}
+.c-modal.video-modal .modal-body {
+    background-color: #000;
+    padding: 0;
+    position: relative;
+}
+.c-modal.video-modal .video-wrapper {
+    width: 100%;
+    padding-bottom: 47.1544715447154%;
+}
+
+
+/*** Video playback ***/
+
+.video-wrapper {
+    position: relative;
+}
+
+.video-wrapper > video,
+.video-wrapper iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%
+}

@@ -1,0 +1,40 @@
+.section-hero {
+	background-size: cover;
+	background-position: center;
+	margin-top: 100px;
+
+	.hero-content {
+		padding: 50px 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 380px;
+	}
+
+	h1, h2, p {
+		color: #fff;
+	}
+
+	h1, h2 {
+		color: #fff;
+		font-family: 'Quicksand', Helvetica;
+		font-size: 56px;
+		font-weight: bold;
+		line-height: 1em;
+		text-align: center;
+		letter-spacing: 0px;
+	}
+
+	& + .site-inner {
+		margin-top: 0 !important;
+	}
+
+	@include media-breakpoint-down(sm) {
+		.hero-content {
+			height: 340px;
+		}
+		h1, h2 {
+			font-size: 40px;
+		}
+	}
+}

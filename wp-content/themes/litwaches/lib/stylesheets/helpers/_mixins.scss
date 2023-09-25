@@ -1,0 +1,51 @@
+// ======================================================================================
+// Mixins
+// ======================================================================================
+
+
+//=Media Query
+// Don't forget to assign your $breakpoints (see variables) 
+// Source: http://www.sitepoint.com/sass-mixins-kickstart-project/
+@mixin breakpoint($name) {
+    @if map-has-key($breakpoints, $name) {
+        @media #{inspect(map-get($breakpoints, $name))} {
+          @content;
+        }
+    }
+    @else {
+      @warn "Couldn't find a breakpoint named `#{$name}`.";
+    }
+}
+
+//=Border Box - usage: @include box-sizing(border-box);
+@mixin box-sizing($type: border-box) {
+   -webkit-box-sizing: $type;
+   -moz-box-sizing:    $type;
+   -ms-box-sizing:     $type;
+   box-sizing:         $type;
+}
+
+
+//=Transitions - usage: @include transition(property, time, method);
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
+@mixin placeholder($color) {
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $color;
+  }
+  &::-moz-placeholder { /* Firefox 19+ */
+    color: $color;
+  }
+  &:-ms-input-placeholder { /* IE 10+ */
+    color: $color;
+  }
+  &:-moz-placeholder { /* Firefox 18- */
+    color: $color;
+  }
+}

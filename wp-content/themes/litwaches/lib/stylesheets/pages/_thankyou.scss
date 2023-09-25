@@ -1,0 +1,249 @@
+
+// Thank you pages
+
+.woocommerce-order-received {
+
+	.woocommerce-thankyou-order-received,
+	.woocommerce-thankyou-order-failed {
+		max-width: 367px;
+		font-size: 40px;
+		font-weight: bold;
+		line-height: 1.2;
+		letter-spacing: normal;
+		color: #000000;
+		text-align: center;
+		margin: 0 auto 20px;
+	}
+	.woocommerce-thankyou-order-failed-actions {
+		text-align: center;
+	}
+
+	.woocommerce ul.order_details {
+		text-align: center;
+		li {
+			font-size: 24px;
+			font-weight: normal;
+			float: none;
+			line-height: 33px;
+			color: #000000;
+			margin: 0;
+			padding: 0;
+			text-transform: none;
+
+			strong {
+				display: inline-block;
+				font-size: inherit;
+			}
+		}
+	}
+}
+
+.woocommerce {
+	.lit-woocommerce-order-bottom {
+
+		width: 392px;
+		margin: 0 auto;
+		text-align: center;
+		max-width: 100%;
+
+		p {
+			max-width: 100%;
+			width: 392px;
+			font-size: 16px;
+			font-weight: 300;
+			line-height: 22px;
+			text-align: center;
+			color: #000;
+		}
+
+		.button {
+			font-weight: normal;
+			width: 307px;
+			max-width: 100%;
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+	}
+}
+
+.related-bought-products {
+	background-color: rgba(216, 216, 216, 0.1);
+
+	.wrap {
+		border-top: 1px solid #d8d8d8;
+		padding-top: 32px;
+		padding-bottom: 46px;
+	}
+
+	h3 {
+		font-size: 22px;
+		font-weight: 600;
+		line-height: 30px;
+		letter-spacing: normal;
+		margin-bottom: 22px;
+		text-align: center;
+	}
+
+	.woocommerce .products ul, 
+	.woocommerce ul.products {
+		display: flex;
+    	justify-content: center;
+		text-align: center;
+
+		li.product,
+		li.product {
+			display: inline-block;
+			float: none;
+			min-width: 236px;
+			height: 106px;
+			background-color: #fff;
+			box-shadow: 0 9px 18px 0 rgba(0, 0, 0, 0.07);
+			padding: 11px 10px 10px;
+			margin-bottom: 0;
+
+			a.woocommerce-loop-product__link {
+				display: block;
+
+				&:after {
+					clear: both;
+					content: '';
+					display: table;
+				}
+			}
+
+			a img {
+				max-width: 81px;
+				max-height: 85px;
+				margin: 0;
+				margin-right: 6px;
+				object-fit: cover;
+				object-position: center;
+				float: left;
+			}
+
+			a h2,
+			a .price {
+				float: left;
+			}
+
+			a h2 {
+				display: inline-block;
+				font-weight: 600;
+			    max-width: calc(100% - 87px);
+			    text-align: left;
+			    white-space: nowrap;
+			    overflow: hidden;
+			}
+
+			.price {
+				font-size: 18px;
+				font-weight: 600;
+				line-height: 24px;
+				letter-spacing: normal;
+				color: #747474;
+
+				.woocommerce-Price-currencySymbol {
+					display: none;
+				}
+
+				ins {
+					text-decoration: none;
+				}
+			}
+
+			.add_to_cart_button {
+				display: none;
+			}
+
+			.onsale {
+				display: none;
+			}
+
+			.woocommerce-loop-category__title,
+			.woocommerce-loop-product__title,
+			h3 {
+
+			}
+		}
+	}
+
+}
+
+@media screen and (max-width: 800px) {
+	.woocommerce-order-received .woocommerce-thankyou-order-received, 
+	.woocommerce-order-received .woocommerce-thankyou-order-failed {
+		font-size: 32px;
+		line-height: 1.25;
+		margin-bottom: 16px;
+	}
+
+	.woocommerce-order-received {
+		.woocommerce ul.order_details {
+			margin-bottom: 5px;
+			li {
+				line-height: 22px;
+			}
+		}
+
+		.entry {
+			margin-bottom: 32px;
+		}
+	}
+
+	.woocommerce {
+		.lit-woocommerce-order-bottom {
+			p {
+				width: 272px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.woo-header-row .woo-nav-right {
+	    font-size: 14px;
+	    font-weight: normal;
+	    line-height: 19px;
+	    margin-top: 0;
+	    text-align: right;
+
+	    p {
+	    	position: relative;
+    		top: 15px;
+	    }
+	}
+}
+
+@media screen and (max-width: 800px) { 
+	.woo-header-row .woo-nav-right {
+	    p {
+	    	top: 8px;
+	    	max-width: 140px;
+	    	margin-left: auto;
+	    }
+	}
+	.related-bought-products {
+		background-color: #fff;
+
+		.wrap {
+			border: 0 none;
+			padding: 0 20px;
+		}
+
+		h3 {
+			font-size: 20px;
+			line-height: normal;
+		}
+		.woocommerce .products ul, 
+		.woocommerce ul.products {
+			flex-direction: column;
+
+			li.product {
+				width: 100%;
+				margin-bottom: 15px;
+			}
+		}
+	}
+}
